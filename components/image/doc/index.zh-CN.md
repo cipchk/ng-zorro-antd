@@ -64,6 +64,7 @@ import { NzImageModule } from 'ng-zorro-antd/image';
 | nzScaleStep         | `1 + nzScaleStep` 为缩放放大的每步倍数                                                                   | `number`  | 0.5    |
 | nzFlipHorizontally  | 在水平向量上翻转图像                                                                                     | `boolean` | `false` |
 | nzFlipVertically    | 在垂直向量上翻转图像                                                                                     | `boolean` | `false` |
+| nzIndex    | 当前图片索引                                                                                     | `number` | `0` |
 
 ### NzImagePreviewRef
 
