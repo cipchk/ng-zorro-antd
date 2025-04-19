@@ -19,6 +19,7 @@ import {
   NzImageDirective,
   NzImageGroupComponent,
   NzImageModule,
+  NzImagePreviewOptions,
   NzImagePreviewRef,
   NzImageService
 } from 'ng-zorro-antd/image';
@@ -541,6 +542,28 @@ describe('Preview', () => {
       previewImageElement = getPreviewImageElement();
       expect(previewImageElement.src).toContain(images[1].src);
     }));
+    it('should index work', fakeAsync(() => {
+      const images = [
+        {
+          src: 'https://img.alicdn.com/tfs/TB1g.mWZAL0gK0jSZFtXXXQCXXa-200-200.svg',
+          width: '200px',
+          height: '200px',
+          alt: 'ng-zorro'
+        },
+        {
+          src: 'https://img.alicdn.com/tfs/TB1Z0PywTtYBeNjy1XdXXXXyVXa-186-200.svg',
+          width: '200px',
+          height: '200px',
+          alt: 'angular'
+        }
+      ];
+      context.images = images;
+      context.options = { nzIndex: 1 };
+      context.createUsingService();
+      tickChanges();
+      let previewImageElement = getPreviewImageElement();
+      expect(previewImageElement.src).toContain(images[1].src);
+    }));
   });
 
   describe('Drag', () => {
@@ -747,6 +770,7 @@ export class TestImagePreviewGroupComponent {
   images: NzImage[] = [];
   zoomStep: number | null = null;
   groupZoomStep: number | null = null;
+  options: NzImagePreviewOptions = { nzZoom: 1.5, nzRotate: 0 };
 
   @ViewChild(NzImageGroupComponent) nzImageGroup!: NzImageGroupComponent;
   @ViewChild(NzImageDirective) nzImage!: NzImageDirective;
@@ -754,6 +778,6 @@ export class TestImagePreviewGroupComponent {
   constructor(private nzImageService: NzImageService) {}
 
   createUsingService(): void {
-    this.previewRef = this.nzImageService.preview(this.images, { nzZoom: 1.5, nzRotate: 0 });
+    this.previewRef = this.nzImageService.preview(this.images, this.options);
   }
 }

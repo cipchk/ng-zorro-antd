@@ -63,6 +63,7 @@ Other attributes [<img\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 | nzScaleStep         | `1 + nzScaleStep` is the step to increase or decrease the scale                                                                                                                                    | `number`  | 0.5     |
 | nzFlipHorizontally  | Flip image on horizontal vector                                                                                                                                                                    | `boolean` | `false` |
 | nzFlipVertically    | Flip image on vertical vector                                                                                                                                                                      | `boolean` | `false` |
+| nzIndex    | View current index                | `number` | `0` |
 
 ### NzImagePreviewRef
 

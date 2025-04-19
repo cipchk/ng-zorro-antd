@@ -17,6 +17,7 @@ export class NzImagePreviewOptions {
   nzFlipVertically?: boolean;
   nzScaleStep?: number;
   nzDirection?: Direction;
+  nzIndex?: number;
 }
 
 export interface NzImage {

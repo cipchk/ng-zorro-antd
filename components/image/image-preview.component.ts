@@ -256,6 +256,7 @@ export class NzImagePreviewComponent implements OnInit {
     this.rotate = this.config.nzRotate ?? this._defaultNzRotate;
     this.flipHorizontally = this.config.nzFlipHorizontally ?? false;
     this.flipVertically = this.config.nzFlipVertically ?? false;
+    this.index = this.config.nzIndex ?? 0;
     this.updateZoomOutDisabled();
     this.updatePreviewImageTransform();
     this.updatePreviewImageWrapperTransform();
